@@ -14,6 +14,8 @@ console.log(__filename); */
 
 const app = express();
 
+/* Getting PORT Value */
+const port = process.env.PORT || 3000
 app.set('view engine','hbs');
 
 const publicDirectory = path.join(__dirname,'../public');
@@ -125,6 +127,6 @@ app.get('*', (req,res) => {
 
 
 
-app.listen(3000, () => {
-    console.log('Server is up and running')
+app.listen(port, () => {
+    console.log('Server is up and running in',port)
 })
